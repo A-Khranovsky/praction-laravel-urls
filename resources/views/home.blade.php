@@ -7,7 +7,7 @@
 <body>
     <p><strong>Posts</strong></p>
     @foreach($posts as $post)
-        <a href="{{url("/posts/{$post->id}")}}">{{$post->title}}</a><br />
+        <a href="{{route('posts', ['id' => $post->id])}}">{{$post->title}}</a><br />
     @endforeach
 </body>
 </html>
