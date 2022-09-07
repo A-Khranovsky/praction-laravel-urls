@@ -15,6 +15,9 @@ class PostController extends Controller
         if ($prev <= 0) {
             $prev = 1;
         }
+        if($next > 10){
+            $next = 10;
+        }
         return
             'URL by: <br />'.
             'url(\'/posts/{$post->id}\'): ' . url("/posts/{$post->id}") . '<br />' .
