@@ -6,10 +6,13 @@
 </head>
 <body>
     URL by: <br />
-    url('/posts/{$post->id}'): {{url("/posts/{$post->id}")}}<br />
-    url()->current(): {{url()->current()}}<br />
-    url()->full(): {{url()->full()}} <br />
-    url()->previous(): {{url()->previous()}}<br />
+    <ul>
+    <li><strong>url('/posts/{$post->id}')</strong>  {{url("/posts/{$post->id}")}}</li>
+    <li><strong>url()->current()</strong>  {{url()->current()}}</li>
+    <li><strong>url()->full()</strong>  {{url()->full()}} </li>
+    <li><strong>url()->previous()</strong>  {{url()->previous()}}</li>
+    <li><strong>route('home', ['post' => $post])</strong>  {{route('home', ['post' => $post])}}</li>
+    </ul>
     @yield('content')
 </body>
 </html>
