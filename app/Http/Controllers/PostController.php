@@ -15,20 +15,19 @@ class PostController extends Controller
         if ($prev <= 0) {
             $prev = 1;
         }
-        if($next > 10){
+        if ($next > 10) {
             $next = 10;
         }
-        return
-            'URL by: <br />'.
-            'url(\'/posts/{$post->id}\'): ' . url("/posts/{$post->id}") . '<br />' .
-            'url()->current() ' . url()->current() . '<br />' .
-            'url()->full() ' . url()->full() . '<br />' .
-            'url()->previous() ' . url()->previous() . '<br />' .
-            '<br />Content: <br />' .
-            $post->content .
-            '<br /><a href=' . url("/posts/{$prev}") . '><-Previous</a>&nbsp' .
-            '<a href=' . url("/posts/{$next}") . '>Next-></a>&nbsp' .
-            '<a href="/">Home</a>';
+        if (isset($_GET['edit'])) {
+            return view('edit', [
+                'post' => Post::find($_GET['edit'])]);
+        }
+        return view('post', [
+            'post' => $post,
+            'next' => $next,
+            'prev' => $prev
+        ]);
+
     }
 
     public function home()
