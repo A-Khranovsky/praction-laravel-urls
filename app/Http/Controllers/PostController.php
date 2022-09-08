@@ -37,9 +37,6 @@ class PostController extends Controller
 
     public function temporaryLink(Request $request)
     {
-        if (! $request->hasValidSignature()) {
-            abort(401);
-        }
         return view('simplePost', ['post' => Post::find($request->post)]);
     }
 }
