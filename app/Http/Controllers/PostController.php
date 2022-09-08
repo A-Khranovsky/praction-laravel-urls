@@ -30,14 +30,16 @@ class PostController extends Controller
 
     }
 
-    public function home(Request $request)
+    public function home()
     {
-        if(isset($_GET['post'])){
-            if (! $request->hasValidSignature()) {
-                abort(401);
-            }
-            return $_GET['expires'];
-        }
         return view('home', ['posts' => Post::all()]);
+    }
+
+    public function temporaryLink(Request $request)
+    {
+        if (! $request->hasValidSignature()) {
+            abort(401);
+        }
+        return view('simplePost', ['post' => Post::find($request->post)]);
     }
 }

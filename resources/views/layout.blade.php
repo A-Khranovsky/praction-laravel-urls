@@ -12,11 +12,11 @@
     <li><strong>url()->full()</strong>  {{url()->full()}} </li>
     <li><strong>url()->previous()</strong>  {{url()->previous()}}</li>
     <li><strong>route('home', ['post' => $post])</strong>  {{route('home', ['post' => $post])}}</li>
-    <li><strong>URL::signedRoute('home', ['post' => $post])</strong><br />
-            {{\Illuminate\Support\Facades\URL::signedRoute('home', ['post' => $post])}}</li>
-    <li><strong>URL::temporarySignedRoute('home', now()->addMinutes(1), ['post' => $post])</strong><br />
+    <li><strong>URL::signedRoute('tmp', ['post' => $post])</strong><br />
+            {{\Illuminate\Support\Facades\URL::signedRoute('tmp', ['post' => $post])}}</li>
+    <li><strong>URL::temporarySignedRoute('tmp', now()->addMinutes(1), ['post' => $post])</strong><br />
             {{\Illuminate\Support\Facades\URL::temporarySignedRoute(
-            'home', now()->addMinutes(1), ['post' => $post])}}
+            'tmp', now()->addMinutes(1), ['post' => $post])}}
     </li>
     </ul>
     @yield('content')
