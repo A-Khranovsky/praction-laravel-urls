@@ -7,11 +7,10 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function index($id)
+    public function index($post)
     {
-        $post = Post::find($id);
-        $next = $id + 1;
-        $prev = $id - 1;
+        $next = $post + 1;
+        $prev = $post - 1;
         if ($prev <= 0) {
             $prev = 1;
         }
@@ -23,7 +22,7 @@ class PostController extends Controller
                 'post' => Post::find($_GET['edit'])]);
         }
         return view('post', [
-            'post' => $post,
+            'post' => Post::find($post),
             'next' => $next,
             'prev' => $prev
         ]);

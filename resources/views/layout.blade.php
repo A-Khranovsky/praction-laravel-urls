@@ -18,6 +18,9 @@
             {{\Illuminate\Support\Facades\URL::temporarySignedRoute(
             'tmp', now()->addMinutes(1), ['post' => $post])}}
     </li>
+    <li><strong>action([\App\Http\Controllers\PostController::class, 'index'], ['post' => $post->id])</strong><br />
+        {{action([\App\Http\Controllers\PostController::class, 'index'], ['post' => $post->id])}}
+    </li>
     </ul>
     @yield('content')
 </body>

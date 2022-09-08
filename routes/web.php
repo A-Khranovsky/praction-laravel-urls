@@ -16,5 +16,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PostController::class, 'home'])->name('home');
-Route::get('/posts/{id}', [PostController::class, 'index'])->name('posts.show');
+Route::get('/posts/{post}', [PostController::class, 'index'])->name('posts.show');
 Route::get('/tmp', [PostController::class, 'temporaryLink'])->name('tmp')->middleware('signed');
