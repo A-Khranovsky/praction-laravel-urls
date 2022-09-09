@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\PostController;
+use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\URL;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,5 +18,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PostController::class, 'home'])->name('home');
-Route::get('/posts/{post}', [PostController::class, 'index'])->name('posts.show');
+Route::get('/post/{id}', [PostController::class, 'index'])->name('post.show');
 Route::get('/tmp', [PostController::class, 'temporaryLink'])->name('tmp')->middleware('signed');
+//Route::get('/{id}/post', [PostController::class, 'index'])->name('post.first');

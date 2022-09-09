@@ -7,9 +7,9 @@
 <body>
     <p><strong>Posts</strong></p>
     @foreach($posts as $post)
-        <a href="{{route('posts.show', ['id' => $post->id])}}">{{$post->title}}</a>
+        <a href="{{route('post.show', ['id' => $post->id])}}">{{$post->title}}</a>
         &nbsp|&nbsp
-        <a href="{{route('posts.show', ['id' => $post->id, 'edit' => $post->id])}}">edit</a><br />
+        <a href="{{route('post.show', ['id' => $post->id, 'edit' => $post->id])}}">edit</a><br />
     @endforeach
 </body>
 </html>

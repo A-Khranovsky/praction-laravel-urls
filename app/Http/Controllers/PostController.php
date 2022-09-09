@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function index($post)
+    public function index($id)
     {
-        $next = $post + 1;
-        $prev = $post - 1;
+        $next = $id + 1;
+        $prev = $id - 1;
         if ($prev <= 0) {
             $prev = 1;
         }
@@ -22,7 +22,7 @@ class PostController extends Controller
                 'post' => Post::find($_GET['edit'])]);
         }
         return view('post', [
-            'post' => Post::find($post),
+            'post' => Post::find($id),
             'next' => $next,
             'prev' => $prev
         ]);
@@ -36,6 +36,6 @@ class PostController extends Controller
 
     public function temporaryLink(Request $request)
     {
-        return view('simplePost', ['post' => Post::find($request->post)]);
+        return view('simplePost', ['post' => Post::find($request->id)]);
     }
 }
