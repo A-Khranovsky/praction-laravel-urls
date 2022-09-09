@@ -17,4 +17,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PostController::class, 'home'])->name('home');
 Route::get('/post/{id}', [PostController::class, 'index'])->name('post.show');
 Route::get('/tmp', [PostController::class, 'temporaryLink'])->name('tmp')->middleware('signed');
-Route::get('/{id}/post', [PostController::class, 'index'])->name('post.first');
+Route::get('/{id}/post_reversed', [PostController::class, 'index'])->name('post_reversed.show');
