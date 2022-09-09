@@ -38,4 +38,12 @@ class PostController extends Controller
     {
         return view('simplePost', ['post' => Post::find($request->id)]);
     }
+
+    public function edit(Request $request, $id)
+    {
+        $post = Post::find($id);
+        $post->content = $request->post_content;
+        $post->save();
+        return redirect(url("post/{$id}"));
+    }
 }
