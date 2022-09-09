@@ -17,7 +17,7 @@ class ForFirst
      */
     public function handle(Request $request, Closure $next)
     {
-        URL::defaults(['id' => 1]);
+        URL::defaults(['id' => $request->id]);
         return $next($request);
     }
 }
