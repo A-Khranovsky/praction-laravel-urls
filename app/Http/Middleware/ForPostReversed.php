@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 
-class ForFirst
+class ForPostReversed
 {
     /**
      * Handle an incoming request.
